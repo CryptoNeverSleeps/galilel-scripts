@@ -107,13 +107,12 @@ function snapshot_sync() {
 echo -e "Setup snapshot, please wait untill finished"
 cd $CONFIGFOLDER >/dev/null 2>&1
 
-wget -c https://galilel.cloud/bootstrap-latest.tar.gz >/dev/null 2>&1
-echo -e "extract bootsrap processing"
-echo -e "bootstrap downloaded, extract"
+wget -c https://bootstrap.galilel.org/v3/mainnet/bootstrap.zip >/dev/null 2>&1
+echo -e "extract bootstrap processing"
 unzip bootstrap.zip >/dev/null 2>&1
 compile_error
 echo -e "extract bootsrap DONE"
-rm -r bootstrap-latest* >/dev/null 2>&1
+rm -r bootstrap* >/dev/null 2>&1
 
 cd >/dev/null 2>&1
 }
