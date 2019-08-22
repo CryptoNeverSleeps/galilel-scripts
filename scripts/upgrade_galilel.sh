@@ -58,18 +58,19 @@ fi
 function download_node() {
   echo -e "${GREEN}Start upgrade $COIN_NAME Daemon${NC}"
 echo -e "download new wallet"
-wget -c https://github.com/Galilel-Project/galilel/releases/download/v3.4.0/galilel-v3.4.0-lin64.tar.gz >/dev/null 2>&1
+VER=$(wget -qO- https://github.com/Galilel-Project/galilel/releases/latest | grep -P /Galilel-Project/galilel/releases/download/.*lin64.tar.gz | grep -Po '(?<=href=")[^"]*')
+wget -c https://github.com$VER >/dev/null 2>&1
   compile_error
 echo -e "extract new wallet"  
-  tar -xvzf galilel-v3.4.0-lin64.tar.gz >/dev/null 2>&1
+  tar -xvzf *lin64.tar.gz >/dev/null 2>&1
 
-cd /root/galilel-v3.4.0-lin64/usr/bin/ >/dev/null 2>&1
+cd /root/*lin64/usr/bin/ >/dev/null 2>&1
 chmod +x $COIN_DAEMON $COIN_CLI >/dev/null 2>&1
 
 echo -e "copy new wallet to usr/local/bin"
   cp -r -p $COIN_DAEMON $COIN_CLI $COIN_PATH >/dev/null 2>&1
   cd  >/dev/null 2>&1
- rm -r galilel-v3.4.0-lin64* >/dev/null 2>&1
+ rm -r *lin64* >/dev/null 2>&1
 
 echo -e "Delete unused file and replace with new file"
 cd $CONFIGFOLDER >/dev/null 2>&1
