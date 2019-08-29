@@ -275,7 +275,7 @@ function important_information() {
  echo -e "Please check ${RED}$COIN_NAME${NC} is running with the following command: ${RED}systemctl status $COIN_NAME.service${NC}"
  echo -e "Use ${RED}$COIN_CLI getinfo${NC} to check getinfo."
  echo -e "Use ${RED}$COIN_CLI mnsync status${NC} to check Sync Completed TRUE."
- echo -e "Use ${RED}$COIN_CLI masternode status${NC} to check your Masternode status."
+ echo -e "Use ${RED}$COIN_CLI getmasternodestatus${NC} to check your Masternode status."
  echo -e "${BLUE}================================================================================================================================${NC}" 
  echo -e "${YELLOW}Thank you for your donation. "
  echo -e "GALILEL: Ucf6bgz52jE6fPbNFhfSnJqRcRqHfmg9AG "
